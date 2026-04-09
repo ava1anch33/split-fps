@@ -1,0 +1,27 @@
+@import 'tailwindcss';
+
+@theme {
+    --color-brand: #07b9db;
+    --color-brand-light: #3ad1ed;
+    --color-brand-dark: #0591ad;
+    --color-brand-50: #e1f9fc;
+}
+
+:root {
+    --background: #f8fafc;
+    --foreground: #1e293b;
+    --card: #ffffff;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+}
+
+@layer base {
+    * {
+        @apply border-slate-200;
+    }
+}
