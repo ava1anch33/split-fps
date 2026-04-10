@@ -1,0 +1,35 @@
+{
+  "common": {
+    "title": "夾錢易 SplitFPS",
+    "subtitle": "智能分賬與轉數快收款",
+    "total": "總需收款",
+    "subtotal": "小計",
+    "serviceChargeLabel": "包含 10% 服務費 (加一)",
+    "generateFPS": "生成 FPS 收款碼",
+    "close": "關閉窗口"
+  },
+  "bill": {
+    "itemsTitle": "帳單明細",
+    "itemCount": "共 {count} 項",
+    "empty": "暫無帳單項，請拍攝收據或手動添加",
+    "scan": "掃描收據",
+    "scanning": "正在辨識...",
+    "manual": "手動添加",
+    "save": "保存",
+    "confirmAdd": "確認添加",
+    "cancel": "取消",
+    "placeholderName": "項目名稱 (如: 乾炒牛河)",
+    "placeholderPrice": "價格 (HK$)"
+  },
+  "errors": {
+    "emptyName": "名稱不能為空",
+    "invalidPrice": "請輸入大於 0 的金額",
+    "tooLarge": "金額過大，請檢查輸入",
+    "ocrFailed": "識別失敗，請重試或手動輸入"
+  },
+  "qr": {
+    "ready": "收款碼已就緒",
+    "instruction": "使用任何支援「轉數快」的銀行 App 掃描下方二維碼，即可直接向你付款",
+    "amountLabel": "應收款項"
+  }
+}

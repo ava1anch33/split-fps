@@ -1,0 +1,35 @@
+{
+  "common": {
+    "title": "SplitFPS",
+    "subtitle": "Smart Splitting & FPS Payment",
+    "total": "Total Amount",
+    "subtotal": "Subtotal",
+    "serviceChargeLabel": "Incl. 10% Service Charge",
+    "generateFPS": "Generate FPS QR",
+    "close": "Close"
+  },
+  "bill": {
+    "itemsTitle": "Bill Details",
+    "itemCount": "{count} ITEMS",
+    "empty": "No items yet. Scan a receipt or add manually.",
+    "scan": "Scan Receipt",
+    "scanning": "Scanning...",
+    "manual": "Add Manually",
+    "save": "Save",
+    "confirmAdd": "Add Item",
+    "cancel": "Cancel",
+    "placeholderName": "Item name (e.g. Milk Tea)",
+    "placeholderPrice": "Price (HK$)"
+  },
+  "errors": {
+    "emptyName": "Name cannot be empty",
+    "invalidPrice": "Please enter a valid price > 0",
+    "tooLarge": "Amount too large",
+    "ocrFailed": "OCR failed, please try again or add manually"
+  },
+  "qr": {
+    "ready": "QR Code Ready",
+    "instruction": "Scan with any FPS-supported Bank App to pay directly",
+    "amountLabel": "Amount Due"
+  }
+}

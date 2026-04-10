@@ -1,0 +1,35 @@
+{
+  "common": {
+    "title": "AA易 SplitFPS",
+    "subtitle": "智能分账与转数快收款",
+    "total": "总需收款",
+    "subtotal": "小计",
+    "serviceChargeLabel": "包含 10% 服務費 (加一)",
+    "generateFPS": "生成 FPS 收款码",
+    "close": "关闭窗口"
+  },
+  "bill": {
+    "itemsTitle": "账单明细",
+    "itemCount": "共 {count} 项",
+    "empty": "暂无账单项，请拍摄收据或手动添加",
+    "scan": "扫描收据",
+    "scanning": "正在识别...",
+    "manual": "手动添加",
+    "save": "保存",
+    "confirmAdd": "确认添加",
+    "cancel": "取消",
+    "placeholderName": "项目名称 (如: 干炒牛河)",
+    "placeholderPrice": "价格 (HK$)"
+  },
+  "errors": {
+    "emptyName": "名称不能为空",
+    "invalidPrice": "请输入大于 0 的金额",
+    "tooLarge": "金额过大，请检查输入",
+    "ocrFailed": "识别失败，请重试或手动输入"
+  },
+  "qr": {
+    "ready": "收款码已就绪",
+    "instruction": "使用任何支持「转数快」的银行 App 扫描下方二维码，即可直接向你付款",
+    "amountLabel": "应收款项"
+  }
+}
