@@ -31,5 +31,14 @@
     "ready": "收款碼已就緒",
     "instruction": "使用任何支援「轉數快」的銀行 App 掃描下方二維碼，即可直接向你付款",
     "amountLabel": "應收款項"
+  },
+  "split": {
+    "participantTitle": "參與人數",
+    "addPerson": "添加成員",
+    "assignTitle": "分配項目 (拖拽或點擊)",
+    "unassigned": "待分配",
+    "placeholderName": "輸入姓名...",
+    "shareBy": "由 {count} 人平分",
+    "individualTotal": "個人應付"
   }
 }

@@ -31,5 +31,14 @@
     "ready": "QR Code Ready",
     "instruction": "Scan with any FPS-supported Bank App to pay directly",
     "amountLabel": "Amount Due"
+  },
+  "split": {
+    "participantTitle": "Participants",
+    "addPerson": "Add Person",
+    "assignTitle": "Assign Items (drag or click)",
+    "unassigned": "Unassigned",
+    "placeholderName": "Enter name...",
+    "shareBy": "Shared by {count} people",
+    "individualTotal": "Individual Total"
   }
 }

@@ -1,24 +1,13 @@
+import { BillItem, Participant } from '@/types'
 import { NextResponse } from 'next/server'
 
 type SplitMode = 'EQUAL' | 'EXACT'
-
-interface Customer {
-    id: string
-    name: string
-}
-
-interface BillItem {
-    id: string
-    name: string
-    price: number
-    assignedTo: string[]
-}
 
 interface SplitRequest {
     items: BillItem[]
     serviceChargeRate: number
     splitMode: SplitMode
-    allUsers: Customer[]
+    allUsers: Participant[]
 }
 
 export async function POST(request: Request) {
