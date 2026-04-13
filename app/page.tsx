@@ -156,7 +156,7 @@ export default function Home() {
             )}
 
             {selectedPersonId && (
-                <QrCodeDialog 
+                <QrCodeDialog
                     participants={participants}
                     selectedPersonId={selectedPersonId}
                     fpsId={fpsId}

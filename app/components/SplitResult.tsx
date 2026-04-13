@@ -27,12 +27,11 @@ export default function SplitResult({
     setParticipants,
     t,
 }: SplitResultProps) {
-
     const handleReset = () => {
         if (window.confirm('確定要發起新帳單嗎？這將清空所有項目和參與者。')) {
-            setItems([]);
-            setParticipants([{ id: 'p1', name: 'Me' }]);
-            setSplitMode('AA');
+            setItems([])
+            setParticipants([{ id: 'p1', name: 'Me' }])
+            setSplitMode('AA')
         }
     }
     return (

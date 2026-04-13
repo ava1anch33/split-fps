@@ -237,7 +237,7 @@ export default function BillCard({
                 </div>
             ) : (
                 <div className="flex flex-wrap gap-3">
-                    <div className='w-full'>{ t.bill.OCRHint }</div>
+                    <div className="w-full">{t.bill.OCRHint}</div>
                     <div className="relative flex-1">
                         <input
                             type="file"

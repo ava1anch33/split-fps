@@ -7,29 +7,32 @@ export function parseOcrLine(line: string) {
         .replace(/[Oo]/g, '0')
         .replace(/[slIL|]/g, '1')
         .replace(/,/g, '.')
-        .trim();
+        .trim()
 
-    const matches = cleaned.match(/\d+[\d.]+/g);
+    const matches = cleaned.match(/\d+[\d.]+/g)
 
-    if (!matches) return null;
+    if (!matches) return null
 
     // choose the rightmost match as price, to handle cases like "Item 12.34 56.78" where 56.78 is the price
-    let rawPrice = matches[matches.length - 1];
+    let rawPrice = matches[matches.length - 1]
 
     // handle if no dot cases like "1000" which should be "10.00"
     if (!rawPrice.includes('.') && rawPrice.length > 1) {
-        rawPrice = rawPrice.slice(0, -2) + '.' + rawPrice.slice(-2);
+        rawPrice = rawPrice.slice(0, -2) + '.' + rawPrice.slice(-2)
     }
 
-    const price = parseFloat(rawPrice);
-    
+    const price = parseFloat(rawPrice)
+
     // get product name by removing the price part from the original line
-    const name = line.replace(rawPrice, '').replace(/[\d.,$HK]/g, '').trim();
+    const name = line
+        .replace(rawPrice, '')
+        .replace(/[\d.,$HK]/g, '')
+        .trim()
 
     return {
-        name: name || "unknown item",
-        price: isNaN(price) ? 0 : price
-    };
+        name: name || 'unknown item',
+        price: isNaN(price) ? 0 : price,
+    }
 }
 
 export async function POST(request: Request) {
@@ -46,10 +49,12 @@ export async function POST(request: Request) {
 
         const text = await (async () => {
             const worker = await Tesseract.createWorker('chi_tra')
-            const { data: { text } } = await worker.recognize(buffer)
+            const {
+                data: { text },
+            } = await worker.recognize(buffer)
             await worker.terminate()
             return text
-        })();
+        })()
 
         const lines = text.split('\n')
         const potentialItems = lines
@@ -57,11 +62,11 @@ export async function POST(request: Request) {
                 const result = parseOcrLine(line)
                 if (!result) return null
                 const { name, price } = result
-                
+
                 return {
                     id: `ocr-${index}`,
                     name,
-                    price
+                    price,
                 }
             })
             .filter((item) => item && item.price > 0)
