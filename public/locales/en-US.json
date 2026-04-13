@@ -19,7 +19,8 @@
     "confirmAdd": "Add Item",
     "cancel": "Cancel",
     "placeholderName": "Item name (e.g. Milk Tea)",
-    "placeholderPrice": "Price (HK$)"
+    "placeholderPrice": "Price (HK$)",
+    "OCRHint": "OCR may not be perfect, please review and edit item names and prices"
   },
   "errors": {
     "emptyName": "Name cannot be empty",
@@ -28,17 +29,27 @@
     "ocrFailed": "OCR failed, please try again or add manually"
   },
   "qr": {
+    "payTo": "Collect from {name}",
     "ready": "QR Code Ready",
     "instruction": "Scan with any FPS-supported Bank App to pay directly",
-    "amountLabel": "Amount Due"
+    "amountLabel": "Amount Due",
+    "inBankSetting": "In-Bank Settings",
+    "fpsIDOrPhone": "FPS ID or Phone Number",
+    "ex": "e.g. 12345678",
+    "fpsInfo": "Must be registered with FPS service in your bank",
+    "saveAndClose": "Save & Close",
+    "infoMissingTitle": "Payment Info Missing",
+    "infoMissingDesc": "Please enter your phone number or FPS ID in the top 'In-Bank Settings' to generate a valid FPS QR code.",
+    "useSupportBank": "Please use a bank app that supports FPS to scan",
+    "setFPSInfoFirst": "⚠️ Please set your payment phone number first to generate a valid QR code",
+    "amount": "Amount",
+    "invalidQrCode": "Invalid QR code"
   },
   "split": {
     "participantTitle": "Participants",
-    "addPerson": "Add Person",
-    "assignTitle": "Assign Items (drag or click)",
-    "unassigned": "Unassigned",
+    "assignTitle": "Assign Items",
     "placeholderName": "Enter name...",
-    "shareBy": "Shared by {count} people",
-    "individualTotal": "Individual Total"
+    "splitResultTitle": "Split Result",
+    "newBill": "New Bill"
   }
 }

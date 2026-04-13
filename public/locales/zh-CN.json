@@ -19,7 +19,8 @@
     "confirmAdd": "确认添加",
     "cancel": "取消",
     "placeholderName": "项目名称 (如: 干炒牛河)",
-    "placeholderPrice": "价格 (HK$)"
+    "placeholderPrice": "价格 (HK$)",
+    "OCRHint": "OCR 识别可能不完美，请仔细检查并编辑项目名称与价格"
   },
   "errors": {
     "emptyName": "名称不能为空",
@@ -28,17 +29,27 @@
     "ocrFailed": "识别失败，请重试或手动输入"
   },
   "qr": {
+    "payTo": "向 {name} 收款",
     "ready": "收款码已就绪",
     "instruction": "使用任何支持「转数快」的银行 App 扫描下方二维码，即可直接向你付款",
-    "amountLabel": "应收款项"
+    "amountLabel": "应收款项",
+    "inBankSetting": "收款设置",
+    "fpsIDOrPhone": "FPS ID 或手机号码",
+    "ex": "例如: 12345678",
+    "fpsInfo": "此号码必须已在银行绑定转数快服务",
+    "saveAndClose": "保存并关闭",
+    "infoMissingTitle": "尚未设置收款资料",
+    "infoMissingDesc": "请点击顶部「收款设置」输入您的手机号码或FPS ID，才能生成真实的 FPS 二维码。",
+    "useSupportBank": "请使用支持 FPS 的银行 App 扫描",
+    "setFPSInfoFirst": "⚠️ 请先设置收款手机号码以生成真实 QR",
+    "amount": "金额",
+    "invalidQrCode": "无效的二维码"
   },
   "split": {
     "participantTitle": "参与人数",
-    "addPerson": "添加成员",
-    "assignTitle": "分配项目 (拖拽或点击)",
-    "unassigned": "待分配",
+    "assignTitle": "分配项目",
     "placeholderName": "输入姓名...",
-    "shareBy": "由 {count} 人平分",
-    "individualTotal": "个人应付"
+    "splitResultTitle": "分账结果",
+    "newBill": "发起新账单"
   }
 }

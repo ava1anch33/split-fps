@@ -23,19 +23,18 @@ export default function BillCard({
     // edit status adn validation
     const [editingId, setEditingId] = useState<string | null>(null)
     const [editName, setEditName] = useState('')
-    const [editPrice, setEditPrice] = useState('')
+    const [editPrice, setEditPrice] = useState(0)
     const [editError, setEditError] = useState('')
 
     // add item status and validation
     const [isAddingItem, setIsAddingItem] = useState(false)
     const [newItemName, setNewItemName] = useState('')
-    const [newItemPrice, setNewItemPrice] = useState('')
+    const [newItemPrice, setNewItemPrice] = useState(0)
     const [addError, setAddError] = useState('')
 
     // validation logic for both editing and adding
-    const validate = (name: string, price: string) => {
+    const validate = (name: string, p: number) => {
         if (!name.trim()) return t.errors.emptyName
-        const p = parseFloat(price)
         if (isNaN(p) || p <= 0) return t.errors.invalidPrice
         if (p > 10000) return t.errors.tooLarge
         return ''
@@ -44,7 +43,7 @@ export default function BillCard({
     const startEditing = (item: BillItem) => {
         setEditingId(item.id)
         setEditName(item.name)
-        setEditPrice(item.price.toString())
+        setEditPrice(item.price)
         setEditError('')
     }
 
@@ -56,9 +55,7 @@ export default function BillCard({
         }
         setItems(
             items.map((item) =>
-                item.id === id
-                    ? { ...item, name: editName.trim(), price: parseFloat(editPrice) }
-                    : item,
+                item.id === id ? { ...item, name: editName.trim(), price: editPrice } : item,
             ),
         )
         setEditingId(null)
@@ -75,12 +72,12 @@ export default function BillCard({
             {
                 id: Date.now().toString(),
                 name: newItemName.trim(),
-                price: parseFloat(newItemPrice),
+                price: newItemPrice,
                 assignedTo: [],
             },
         ])
         setNewItemName('')
-        setNewItemPrice('')
+        setNewItemPrice(0)
         setAddError('')
         setIsAddingItem(false)
     }
@@ -121,9 +118,10 @@ export default function BillCard({
                                     />
                                     <input
                                         type="number"
-                                        value={editPrice}
+                                        value={isNaN(editPrice) || editPrice === 0 ? '' : editPrice}
                                         onChange={(e) => {
-                                            setEditPrice(e.target.value)
+                                            const val = e.target.value
+                                            setEditPrice(val === '' ? 0 : parseFloat(val))
                                             setEditError('')
                                         }}
                                         className={`w-20 p-2 bg-white border rounded-lg text-sm focus:outline-none ${editError ? 'border-red-500' : 'border-brand'}`}
@@ -202,12 +200,13 @@ export default function BillCard({
                         <input
                             type="number"
                             placeholder={t.bill.placeholderPrice}
-                            value={newItemPrice}
+                            value={isNaN(newItemPrice) || newItemPrice === 0 ? '' : newItemPrice}
                             onChange={(e) => {
-                                setNewItemPrice(e.target.value)
+                                const val = e.target.value
+                                setNewItemPrice(val === '' ? 0 : parseFloat(val))
                                 setAddError('')
                             }}
-                            className={`w-full p-2.5 rounded-lg border bg-white focus:outline-none focus:ring-2 focus:ring-brand/10 ${addError && (isNaN(parseFloat(newItemPrice)) || parseFloat(newItemPrice) <= 0) ? 'border-red-500' : 'border-slate-200 focus:border-brand'}`}
+                            className={`w-full p-2.5 rounded-lg border bg-white focus:outline-none focus:ring-2 focus:ring-brand/10 ${addError && (isNaN(newItemPrice) || newItemPrice <= 0) ? 'border-red-500' : 'border-slate-200 focus:border-brand'}`}
                         />
                     </div>
 
@@ -237,16 +236,19 @@ export default function BillCard({
                     </div>
                 </div>
             ) : (
-                <div className="flex gap-3">
+                <div className="flex flex-wrap gap-3">
+                    <div className='w-full'>{ t.bill.OCRHint }</div>
                     <div className="relative flex-1">
                         <input
                             type="file"
                             accept="image/*"
                             onChange={handleFileUpload}
+                            disabled={isScanning}
                             className="absolute inset-0 opacity-0 cursor-pointer z-10"
                         />
                         <button
                             className={`w-full py-3 flex items-center justify-center gap-2 rounded-xl font-bold border-2 transition-all ${isScanning ? 'bg-slate-50 text-slate-400 border-slate-100 cursor-not-allowed' : 'bg-brand-50 text-brand border-brand hover:bg-brand hover:text-white shadow-sm shadow-brand/10'}`}
+                            disabled={isScanning}
                         >
                             {isScanning ? (
                                 <span className="animate-pulse">{t.bill.scanning}</span>
