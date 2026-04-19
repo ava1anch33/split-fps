@@ -21,7 +21,7 @@ In accordance with the project objectives:
 ### Setup
 
 ```Bash
-git clone git@github.com:ava1anch33/split-fps.git
+git clone git@github.com:Nagikawa/split-fps.git
 cd split-fps
 npm install
 npm run dev
