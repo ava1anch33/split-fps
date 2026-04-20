@@ -78,6 +78,7 @@ export default function Home() {
             }
         } catch (err) {
             alert(t.errors?.ocrFailed || '識別失敗')
+            setItems((prev) => [...prev])
         } finally {
             setIsScanning(false)
         }
