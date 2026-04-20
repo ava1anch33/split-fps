@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useMemo, useEffect } from 'react'
-import { QrCode, Settings, AlertCircle } from 'lucide-react'
+import { AlertCircle } from 'lucide-react'
 import BillCard from '@/components/BillCard'
 import ParticipantManager from '@/components/ParticipantManager'
 import ItemAssigner from '@/components/ItemAssigner'
