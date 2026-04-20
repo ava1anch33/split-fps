@@ -62,9 +62,7 @@ export default function Home() {
         return { total, personBalances }
     }, [items, participants, splitMode])
 
-    const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-        const file = e.target.files?.[0]
-        if (!file) return
+    const handleFileUpload = async (file: File) => {
         setIsScanning(true)
         const formData = new FormData()
         formData.append('file', file)

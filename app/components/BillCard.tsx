@@ -9,7 +9,7 @@ interface BillCardProps {
     items: BillItem[]
     setItems: React.Dispatch<React.SetStateAction<BillItem[]>>
     isScanning: boolean
-    handleFileUpload: (e: React.ChangeEvent<HTMLInputElement>) => Promise<void>
+    handleFileUpload: (file: File) => Promise<void>
     t: TranslationType
 }
 
@@ -242,7 +242,12 @@ export default function BillCard({
                         <input
                             type="file"
                             accept="image/*"
-                            onChange={handleFileUpload}
+                            onChange={(e) => {
+                                const file = e.target.files?.[0]
+                                if (!file) return
+                                handleFileUpload(file)
+                                e.target.value = ""
+                            }}
                             disabled={isScanning}
                             className="absolute inset-0 opacity-0 cursor-pointer z-10"
                         />
